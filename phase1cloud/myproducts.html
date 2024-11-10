@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shop</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="brand">
+            <div class="raccoon">
+                <img width="90" src="/images/raccoon_logo_croped.png" alt="Raccoon Logo">
+            </div>
+            <a href="index.html">
+                <h3>Home Page</h3>
+            </a>
+            <a href="myproducts.html">
+                <h3> My products</h3>
+            </a>
+            <a href="order.html">
+                <h3> Orders</h3>
+            </a>
+            <br>
+            <p class="learn-to-shop">learn to shop <i class="bi bi-tsunami"></i></p>
+        </div>
+
+      
+       <!-- Search Bar -->
+    <div class="search_bar">
+        <input type="text" id="searchInput" placeholder="Search Item" oninput="filterProducts()">
+        <button type="button" onclick="filterProducts()"><i class="bi bi-search"></i></button>
+    </div>     
+    </div>
+    
+    <div class="AddProduct" id="AddProduct">
+        <h2>Add Product</h2>
+        <form id="addProductForm">
+            <input type="text" id="new-product-title" placeholder="Title" required />
+            <div><h3>Choose image</h3></div><input type="file" id="fileInput" accept="image/*">
+            <input type="number" id="new-product-price" placeholder="Price" required min="0" step="0.01" />
+            <input type="number" id="new-product-quantity" placeholder="Quantity" required min="1" />
+            <textarea id="new-product-description" placeholder="Description" required></textarea>
+            <button type="button" onclick="addNewProduct()">Add Product</button>
+        </form>
+    </div>
+    
+
+
+    <!-- Shop Section -->
+    <div class="shop" id="shop">
+        <!-- Products will be dynamically injected here by main.js -->
+    </div>
+   
+    
+
+
+    <!-- JavaScript files -->
+    <script src="src/myproducts.js"></script>
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+          var file = event.target.files[0];
+          var fileInfo = `
+            <p>File Name: ${file.name}</p>
+            <p>File Size: ${file.size} bytes</p>
+            <p>File Type: ${file.type}</p>
+          `;
+          document.getElementById('fileInfo').innerHTML = fileInfo;
+        });
+      </script>
+      
+
+</body>
+</html>

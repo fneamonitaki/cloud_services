@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E shop</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="brand">
+            <div class="raccoon">  <img width="90" src="/images/raccoon_logo_croped.png" alt="Raccoon Logo"></div>
+           
+            <a href="index.html"> 
+                <h2> Raccoon's Vinyls</h2>
+            </a>
+        </div>
+       
+    
+        <div class="search_bar">
+            <form action="index.html" method="GET">
+                <input type="text" name="search" placeholder="Search Item">
+                <button type="submit" >search </button>
+        
+            </form> </div>
+       
+        <a href="cart.html"> 
+            <div class="cart">
+            <i class="bi bi-basket"></i>
+            <div id= "cartAmount" class="cartAmount">0</div>
+        </div> </a>
+       
+    
+    
+       </div>
+  <div id="label" class="text-center"></div>
+
+  <div id="shopping-cart" class="shopping-cart"></div>
+
+</body>
+
+<script src="src/cart.js"></script>
+</html>
