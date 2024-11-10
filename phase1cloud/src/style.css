@@ -1,0 +1,409 @@
+/**
+* ? Changing default styles of the beowser
+**/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+
+/**
+* ? NavBar Styles are here
+**/
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #391020;
+    color: white;
+    padding: 25px 60px;
+    margin-bottom: 30px; /* apostasi apo to navbar kai ta items*/
+    align-items: center;
+}
+
+.brand{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    gap :7px;
+    
+}
+
+.raccoon{
+    background-color: #a43441 ;
+    padding: 1px;
+    border-radius: 4px;
+}
+
+
+i{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.cart{
+    background-color: #ffff ;
+    color: #003049;
+    font-size: 30px;
+    padding: 5px;
+    border-radius: 4px;
+    position: relative;
+
+}
+
+.cartAmount{
+    font-size: 20px;
+    top: -15px;
+    right : -10px;
+    position: absolute;
+    border-radius: 4px;
+    padding: 3px;
+    background-color: red;
+}
+
+.search_bar{
+    border-radius: 4px;
+    padding: 3px;
+    font-size: 20px;
+}
+
+.background{
+    background-image: url('/images/shop-background.png'); /* Replace with the path to your background image */
+    background-size: cover; /* This will make the image cover the entire section */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+
+}
+
+.shop{
+    display: grid;
+    grid-template-columns: repeat(4, 223px);
+    gap: 30px;
+    justify-content: center;
+    margin-bottom:50px;
+    
+   
+    padding: 20px; /* Optional: add padding if needed */
+}
+
+.learn-to-shop {
+    margin-top: 10px; /* Adjust the value to control the spacing */
+}
+
+
+@media( max-width:1000px){
+    .shop{
+        grid-template-columns: repeat(2, 223px);
+    }
+}
+
+@media( max-width:500px){
+    .shop{
+        grid-template-columns: repeat(1, 223px);
+    }
+}
+
+.item {
+    border: 2px solid #003049;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white; /* Adds white background to each item */
+    padding: 10px; /* Optional: adds padding inside each item */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow for a lifted effect */
+}
+
+.item img {
+    width: 100%;
+    border-radius: 2px 2px 0 0;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    margin-top: -10px;
+    flex-grow: 1; /* Let the details take up available space */
+}
+
+.price-quantity{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Push this section to the bottom */
+}
+
+.price-quantity-my-products{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Push this section to the bottom */
+}
+
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    gap :8px;
+    font-size: 18px;
+}
+
+.bi-dash{
+    color: red;
+}
+
+.bi-plus{
+    color: green;
+}
+
+/**
+* ! style rules for buttons
+**/
+
+.text-center{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.HomeButton, 
+.checkout,
+.removeAll,
+.shopmore{
+    background-color: #003049;
+    color: white;
+    border: none;
+    padding: 6px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.bi-search{
+    color: #003049;
+}
+.checkout{
+    background-color: green;
+}
+
+.removeAll{
+    background-color: red;
+}
+
+.bi-x-lg{
+    color: red;
+    font-weight: bold;
+}
+
+.shopping-cart{
+    display: grid;
+    grid-template-columns: repeat(1,350px);
+    justify-content: center;
+    gap:15px;
+}
+
+.cart-item{
+    border: 2px solid;
+    color: #003049;
+    border-radius: 5px;
+    display: flex;
+   
+}
+
+.title-price-x{
+    width: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-price{
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+
+.cart-item-price{
+    background-color: #003049;
+    color: white;
+    border-radius: 4px;
+    padding: 3px 6px;
+}
+
+.AddProduct form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+    margin-top: 20px;
+}
+
+.AddProduct input, .AddProduct textarea {
+    padding: 8px;
+    font-size: 16px;
+}
+
+.AddProduct button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.AddProduct button:hover {
+    background-color: #45a049;
+}
+
+/* Button Styles */
+.update-button, .delete-button {
+    background-color: #28a745; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth background color change */
+}
+
+.update-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.delete-button {
+    background-color: #dc3545; /* Red background */
+}
+
+.delete-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Style for the order container */
+#order-container {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+}
+
+/* General order item styling */
+.order-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+/* Header styling for order */
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.order-header h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.order-status {
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-transform: capitalize;
+}
+
+.order-status.completed {
+    background-color: #28a745;
+    color: white;
+}
+
+.order-status.pending {
+    background-color: #ffc107;
+    color: white;
+}
+
+.order-status.cancelled {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Product list styling */
+.product-list {
+    list-style: none;
+    padding: 0;
+}
+
+.product-list li {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 5px 0;
+}
+
+.product-id {
+    color: #888;
+    font-size: 12px;
+}
+
+/* Footer styling for total price */
+.order-footer {
+    margin-top: 15px;
+    text-align: right;
+}
+
+.total-price {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.total-price span {
+    color: #333;
+}
+
+.custom-file-upload {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.custom-file-upload label {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.custom-file-upload input[type="file"] {
+    display: none;
+}
+
+.image-preview {
+    margin-top: 10px;
+    max-width: 100%;
+    max-height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    display: none;
+}
+
+
+   
