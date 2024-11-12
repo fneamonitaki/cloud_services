@@ -1,0 +1,91 @@
+services:
+  orders_database:
+    image: postgres
+    container_name: orders_database
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 20022002
+      POSTGRES_DB: orders_database
+    ports:
+      - "5003:5432"
+    volumes:
+      - orders_database:/var/lib/postgresql/data
+      - ./init_orders_db.sql:/docker-entrypoint-initdb.d/init.sql
+
+  products_database:
+    image: postgres
+    container_name: products_database
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 20022002
+      POSTGRES_DB: products_database
+    ports:
+      - "5002:5432"
+    volumes:
+      - products_database:/var/lib/postgresql/data
+      - ./init_products_db.sql:/docker-entrypoint-initdb.d/init.sql
+
+  # frontend:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - orders_database
+  #     - products_database
+
+  # server:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - orders_database
+  #     - products_database
+  #   environment:
+  #     - DB_HOST=products_database
+  #     - DB_PORT=5432
+  #     - DB_USER=postgres
+  #     - DB_PASSWORD=20022002
+  #     - DB_NAME=products_database
+  #     - ORDERS_DB_HOST=orders_database
+  #     - ORDERS_DB_PORT=5432
+  #     - ORDERS_DB_USER=postgres
+  #     - ORDERS_DB_PASSWORD=20022002
+  #     - ORDERS_DB_NAME=orders_database
+
+  # order_api:
+  #   build:
+  #     context: ./order_api
+  #   container_name: order_api_container
+  #   environment:
+  #     - DB_HOST=orders_database
+  #     - DB_PORT=5432
+  #     - DB_USER=postgres
+  #     - DB_PASSWORD=20022002
+  #     - DB_NAME=orders_database
+  #   depends_on:
+  #     - orders_database
+  #   ports:
+  #     - "5001:5001"
+
+  # products_api:
+  #   build:
+  #     context: ./products_api
+  #   container_name: products_api_container
+  #   environment:
+  #     - DB_HOST=products_database
+  #     - DB_PORT=5432
+  #     - DB_USER=postgres
+  #     - DB_PASSWORD=asterinos
+  #     - DB_NAME=products_database
+  #   depends_on:
+  #     - products_database
+  #   ports:
+  #     - "5000:5000"
+
+volumes:
+  orders_database:
+  products_database:
