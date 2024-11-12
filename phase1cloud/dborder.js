@@ -4,7 +4,7 @@ const pool = new Pool({
     password: "20022002",
     database: "orders_database",
     host: "localhost",
-    port: 5432
+    port: 5003
 });
 
 module.exports = pool;
